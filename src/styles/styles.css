@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body{
+        font-family: "Josefin Sans", Lobster, 'sans-serif';
+    }
+}
+
+@layer components {
+    .menu-list{
+        @apply transition-transform absolute top-full left-full py-4 bg-[rgba(0,0,0,.7)]
+        md:py-8 md:bg-transparent md:flex md:bg-transparent md:static  md:bg-transparent
+    }
+
+    .menu-list > li{
+        @apply px-6 text-right md:text-center md:w-28 lg:w-44
+    }
+
+    .menu-list > li.center-left{
+        @apply md:mr-20
+    }
+    .menu-list > li.center-right{
+        @apply md:ml-20
+    }
+
+    .menu-list > li > a{
+        @apply py-2 px-4 uppercase relative inline-block text-sm lg:text-xl text-white
+    }
+
+    .menu-list > li > a > span{
+        @apply block absolute bottom-0 w-[calc(100%-2rem)] h-[3px] overflow-hidden left-4 rounded-full
+        before:block before:bg-white before:-translate-x-full before:w-full before:h-full
+        before:transition-transform hover:before:translate-x-0
+    }
+    .menu-list > li > a:hover > span{
+        @apply before:translate-x-0
+    }
+
+    .hamburger-menu{
+        @apply flex flex-col w-[50px] h-[50px] md:hidden justify-center items-center ml-auto mr-0
+    }
+    .hamburger-menu > span{
+        @apply w-1/2 h-[2px] block bg-white rounded-full
+    }
+
+    .btn{
+        @apply py-3 px-8 uppercase rounded-full border-0 relative font-bold tracking-widest
+        before:transition-transform
+        hover:before:-translate-x-1/2
+    }
+
+    .btn.primary{
+        @apply bg-primary text-white overflow-hidden
+        before:w-[200%] before:h-full before:absolute before:m-auto before:inset-0
+        before:bg-gradient-to-tr before:from-transparent before:to-primary before:z-0
+    }
+
+    .control{
+        @apply w-full py-2 text-center border-b border-gray-800 focus:outline-none focus:placeholder-transparent
+    }
+
+    .v-notify-toast{
+        @apply py-2 px-6
+    }
+
+    .v-notify-toast-outer:not(:last-child){
+        @apply mb-2
+    }
+
+    .v-notify-toast.default{
+        @apply text-black bg-white
+    }
+
+    .v-notify-toast.danger{
+        @apply  text-red-500 bg-white;
+    }
+
+    .v-notify-toast.success{
+        @apply  text-green-600 bg-white
+    }
+
+    .v-notify-toast-header{
+        @apply flex justify-between
+    }
+
+    .v-notify-toast-header span:first-child{
+        @apply font-bold uppercase;
+    }
+}
+
+@layer utilities {
+
+}

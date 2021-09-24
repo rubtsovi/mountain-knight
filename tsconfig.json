@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "strict": true,
+        "jsx": "preserve",
+        "importHelpers": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true,
+        "types": ["webpack-env"],
+        "baseUrl": "./",
+        "paths": {
+            "@plugin/*": ["src/plugins/vue-notify-plugin/src/*"]
+        },
+        "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/*.ts",
+        "src/**/*.vue",
+    ],
+    "exclude": ["node_modules"]
+}

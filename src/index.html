@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+</head>
+<body>
+
+    <div id="app">
+        <div class="w-screen h-screen relative overflow-hidden flex flex-col bg-gradient-to-b from-transparent-black">
+            <img class="w-full z-[-1] h-full object-cover block absolute top-0 left-0" src="<%=require('./images/bg-banner-1@1.5x.png')%>" alt="hero">
+
+            <!--   MENU     -->
+            <div id="menu-container" class="relative px-5 py-6 flex justify-center items-center bg-[rgba(0,0,0,.7)] md:bg-transparent">
+                <a href="#" class="block w-16 h-16 lg:w-20 lg:h-20 absolute inset-0 m-auto">
+                    <svg class="w-full h-full block fill-current text-white"
+                         viewBox="0 0 470 470" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"> <path d="m130.45 126.5h209.11c4.142 0 7.5-3.358 7.5-7.5 0-27.979-22.762-50.741-50.741-50.741-1.747 0-3.491 0.09-5.225 0.268-8.798-22.994-30.961-38.527-56.087-38.527s-47.289 15.533-56.087 38.527c-1.734-0.178-3.479-0.268-5.225-0.268-27.979 0-50.741 22.762-50.741 50.741 0 4.142 3.358 7.5 7.5 7.5zm43.24-43.241c2.9 0 5.79 0.35 8.589 1.04 3.996 0.987 8.044-1.437 9.062-5.426 5.093-19.944 23.048-33.873 43.662-33.873s38.569 13.929 43.662 33.873c1.019 3.991 5.069 6.415 9.062 5.426 2.799-0.69 5.689-1.04 8.589-1.04 17.136 0 31.494 12.122 34.949 28.241h-192.52c3.456-16.119 17.814-28.241 34.949-28.241z"/> <path d="M401.17,68.83C356.785,24.444,297.771,0,235,0S113.215,24.444,68.83,68.83C24.444,113.215,0,172.229,0,235 s24.444,121.785,68.83,166.17C113.215,445.556,172.229,470,235,470s121.785-24.444,166.17-68.83 C445.556,356.785,470,297.771,470,235S445.556,113.215,401.17,68.83z M235,455c-121.309,0-220-98.691-220-220S113.691,15,235,15 s220,98.691,220,220S356.309,455,235,455z"/> <circle cx="150.95" cy="367.33" r="7.5"/> <circle cx="132.95" cy="337.33" r="7.5"/> <circle cx="350.16" cy="301.83" r="7.5"/> <path d="m423.01 309.09-92.186-159.66c-1.34-2.321-3.816-3.75-6.495-3.75-2.68 0-5.155 1.43-6.495 3.75l-72.006 124.72c-2.071 3.587-0.842 8.174 2.745 10.245 3.585 2.071 8.174 0.842 10.245-2.745l16.119-27.919 19.1 14.131c2.651 1.961 6.271 1.961 8.922 0l21.368-15.81 21.371 15.81c1.325 0.98 2.893 1.471 4.46 1.471s3.135-0.49 4.46-1.471l19.106-14.134 34.391 59.564c-7.445 16.398-17.192 31.657-29.008 45.402-2.7 3.141-2.343 7.876 0.798 10.577 1.416 1.217 3.155 1.813 4.886 1.813 2.11 0 4.208-0.886 5.691-2.611 13.625-15.851 24.701-33.57 32.921-52.667 0.937-2.176 0.791-4.665-0.393-6.716zm-72.852-56.586-21.372-15.81c-2.65-1.961-6.271-1.961-8.921 0l-21.367 15.81-16.012-11.847 41.844-72.476 41.846 72.474-16.018 11.849z"/> <path d="m358.69 379.1c-34.432 29.598-78.358 45.898-123.69 45.898-74.732 0-142.27-43.719-173.11-111.71l34.392-59.563 19.103 14.133c2.651 1.961 6.271 1.961 8.922 0l21.368-15.81 21.371 15.81c1.325 0.98 2.893 1.471 4.46 1.471 1.568 0 3.135-0.49 4.46-1.471l19.102-14.132 83.622 144.84c2.071 3.587 6.658 4.817 10.245 2.745 3.587-2.071 4.816-6.658 2.745-10.245l-139.51-241.64c-1.34-2.32-3.815-3.75-6.495-3.75-2.679 0-5.155 1.43-6.495 3.75l-92.186 159.66c-1.184 2.051-1.33 4.54-0.394 6.715 32.477 75.449 106.43 124.2 188.4 124.2 48.916 0 96.315-17.587 133.47-49.523 3.141-2.7 3.499-7.436 0.798-10.577-2.701-3.14-7.435-3.497-10.576-0.798zm-213.02-210.92 41.844 72.476-16.015 11.847-21.372-15.81c-2.65-1.961-6.271-1.961-8.921 0l-21.368 15.81-16.015-11.849 41.847-72.474z"/>
+                </svg>
+                </a>
+                <button class="hamburger-menu group" v-on:click="isMenuVisible = !isMenuVisible">
+                    <span class="group-hover:-translate-y-0.5 transition-transform"></span>
+                    <span class="my-1.5"></span>
+                    <span class="group-hover:translate-y-0.5 transition-transform"></span>
+                </button>
+                <ul class="menu-list !md:translate-x-0" v-bind:class="{'-translate-x-full': isMenuVisible}">
+                    <li><a href="#">About <span></span></a></li>
+                    <li class="center-left"><a href="#">Offer <span></span></a></li>
+                    <li class="center-right"><a href="#">Gallery <span></span></a></li>
+                    <li><a href="#">Contact <span></span></a></li>
+                </ul>
+            </div>
+            <!--   MENU/END     -->
+
+            <!--   HERO     -->
+
+            <div id="hero" class="text-center px-5 flex-1 flex justify-center items-center">
+                <div>
+                    <div class="text-6xl md:text-8xl font-lobster text-white mb-24">Mountain Kingdom</div>
+                    <button class="btn primary" @click="popupVisible = true"><span class="inline-block relative">Enter the gates</span></button>
+                </div>
+            </div>
+
+            <!--   HERO/END     -->
+            <!--   FOOTER     -->
+
+            <footer id="footer" class="bg-[rgba(0,0,0,0.7)] py-5 relative">
+                <div class="container px-5 flex items-center mx-auto text-xs text-[#b7b7b7] flex-col md:flex-row -my-1">
+                    <div class="flex-1 uppercase py-1">&copy;&nbsp;2021&nbsp;Mountain Kingdom</div>
+                    <div class="flex-1 text-center py-1">
+                        <a href="#" class="hover:underline inline-block align-middle">Cookies</a>
+                        <span class="inline-block px-6 align-middle">&vert;</span>
+                        <a href="#" class="hover:underline inline-block align-middle">Privacy</a>
+                    </div>
+                    <div class="flex-1 text-right py-1">
+                        Designed by <a href="#" class="text-white hover:underline">Wizard of Oz</a>
+                    </div>
+                </div>
+            </footer>
+            <transition name="fade"
+                        enter-active-class="animated faster fadeIn"
+                        leave-active-class="animated faster fadeOut">
+                <signup-popup v-if="popupVisible"
+                              :is-fetching="isFetching"
+                              @close="popupVisible = false"></signup-popup>
+            </transition>
+
+        </div>
+        <!--   FOOTER/END     -->
+    </div>
+
+</body>
+</html>
