@@ -1,0 +1,51 @@
+@use "sass:color";
+
+$base: #141301 !default;
+$primary: #090446 !default;
+$secondary: #786f52 !default;
+$success:#6BD425 !default;
+$danger: #f71735 !default;
+$warning: #ecd444 !default;
+$info: #4381c1 !default;
+$light: #EFF9F0 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+    (
+        default: $base,
+        primary: $primary,
+        secondary: $secondary,
+        success: $success,
+        danger: $danger,
+        warning: $warning,
+        info: $info
+    ),
+    $theme-colors
+);
+
+$context-text-colors: () !default;
+$context-text-colors: map-merge(
+    (
+        default: $light,
+        primary: $light,
+        secondary: $base,
+        success: $base,
+        danger: $light,
+        warning: $base,
+        info: $light
+    ),
+    $context-text-colors
+);
+
+$context-border-colors: () !default;
+$context-border-colors: map-merge(
+    (
+        default: $base,
+        primary: $primary,
+        secondary: $secondary,
+        success: $success,
+        danger: $danger,
+        warning: $warning,
+        info: $info
+    )
+);
